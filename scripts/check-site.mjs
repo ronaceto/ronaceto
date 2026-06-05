@@ -15,9 +15,11 @@ const requiredFragments = [
   ["index.html", "Ron Aceto"],
   ["ai-technology-education.html", "AI &amp; Technology Education Portfolio"],
   ["ai-technology-education.html", "AI + Coding Starter Kit"],
+  ["ai-technology-education.html", "Cybersecurity &amp; Digital Ethics Starter Kit"],
   ["ai-technology-education.html", "Preview resource"],
   ["ai-technology-education.html", "These resources include Tennessee Computer Science Foundations standards connections where applicable."],
   ["ai-technology-education.html", "These resources may support Tennessee Department of Education Computer Science Foundations"],
+  ["ai-technology-education.html", "Standards Connection: These resources may support Tennessee Computer Science Foundations"],
   ["contact.html", "ronaceto@outlook.com"],
   ["site.css", ":root"],
 ];
@@ -39,6 +41,17 @@ const aiCodingResourceFiles = [
   "05_student_safe_ai_coding_conversation_sample.pdf",
   "06_teacher_implementation_guide_ai_coding.pdf",
   "07_video_walkthrough_script_ai_debugging_without_cheating.pdf",
+];
+
+const cybersecurityResourceFiles = [
+  "00_module_c_overview.docx",
+  "01_lesson_plan_spot_the_phish.docx",
+  "02_password_strength_activity.docx",
+  "03_digital_footprint_reflection.docx",
+  "04_cybersecurity_careers_one_pager.docx",
+  "05_ai_cybersecurity_discussion_prompt.docx",
+  "06_teacher_implementation_guide_cybersecurity.docx",
+  "07_video_walkthrough_script_why_cybersecurity_belongs.docx",
 ];
 
 for (const route of routes) {
@@ -74,4 +87,12 @@ for (const file of aiCodingResourceFiles) {
   }
 }
 
-console.log(`Checked ${routes.length} routes, shared assets, and ${aiLiteracyResourceFiles.length + aiCodingResourceFiles.length} downloads.`);
+for (const file of cybersecurityResourceFiles) {
+  const path = `public/resources/cybersecurity-digital-ethics-starter-kit/${file}`;
+  const bytes = readFileSync(path);
+  if (bytes.length < 1000) {
+    throw new Error(`${path} appears to be missing or empty.`);
+  }
+}
+
+console.log(`Checked ${routes.length} routes, shared assets, and ${aiLiteracyResourceFiles.length + aiCodingResourceFiles.length + cybersecurityResourceFiles.length} downloads.`);
