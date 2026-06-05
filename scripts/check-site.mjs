@@ -14,19 +14,31 @@ const routes = [
 const requiredFragments = [
   ["index.html", "Ron Aceto"],
   ["ai-technology-education.html", "AI &amp; Technology Education Portfolio"],
+  ["ai-technology-education.html", "AI + Coding Starter Kit"],
   ["ai-technology-education.html", "Preview resource"],
   ["ai-technology-education.html", "These resources include Tennessee Computer Science Foundations standards connections where applicable."],
+  ["ai-technology-education.html", "These resources may support Tennessee Department of Education Computer Science Foundations"],
   ["contact.html", "ronaceto@outlook.com"],
   ["site.css", ":root"],
 ];
 
-const resourceFiles = [
+const aiLiteracyResourceFiles = [
   "01_student_ai_agreement.docx",
   "02_responsible_ai_use_checklist.docx",
   "03_better_prompts_vs_shortcuts_activity.docx",
   "04_lesson_plan_ai_as_learning_partner.docx",
   "05_teacher_implementation_guide.docx",
   "06_video_walkthrough_script.docx",
+];
+
+const aiCodingResourceFiles = [
+  "01_lesson_plan_ai_as_coding_coach.pdf",
+  "02_python_debugging_activity.pdf",
+  "03_ask_ai_better_coding_questions_handout.pdf",
+  "04_responsible_ai_use_in_coding_rubric.pdf",
+  "05_student_safe_ai_coding_conversation_sample.pdf",
+  "06_teacher_implementation_guide_ai_coding.pdf",
+  "07_video_walkthrough_script_ai_debugging_without_cheating.pdf",
 ];
 
 for (const route of routes) {
@@ -46,7 +58,7 @@ for (const [file, fragment] of requiredFragments) {
   }
 }
 
-for (const file of resourceFiles) {
+for (const file of aiLiteracyResourceFiles) {
   const path = `public/resources/ai-literacy-starter-kit/${file}`;
   const bytes = readFileSync(path);
   if (bytes.length < 1000) {
@@ -54,4 +66,12 @@ for (const file of resourceFiles) {
   }
 }
 
-console.log(`Checked ${routes.length} routes, shared assets, and ${resourceFiles.length} downloads.`);
+for (const file of aiCodingResourceFiles) {
+  const path = `public/resources/ai-coding-starter-kit/${file}`;
+  const bytes = readFileSync(path);
+  if (bytes.length < 1000) {
+    throw new Error(`${path} appears to be missing or empty.`);
+  }
+}
+
+console.log(`Checked ${routes.length} routes, shared assets, and ${aiLiteracyResourceFiles.length + aiCodingResourceFiles.length} downloads.`);
