@@ -1,0 +1,14 @@
+{
+  "name": "ronaceto-com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio website for ronaceto.com.",
+  "scripts": {
+    "dev": "netlify dev --dir .",
+    "serve": "npx serve .",
+    "check": "node scripts/check-site.mjs"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

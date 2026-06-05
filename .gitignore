@@ -1,0 +1,7 @@
+node_modules/
+.netlify/
+.netlify-dev.log
+.netlify-dev.err.log
+deno.lock
+.DS_Store
+Thumbs.db
