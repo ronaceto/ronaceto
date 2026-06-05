@@ -14,6 +14,9 @@ const routes = [
 const requiredFragments = [
   ["index.html", "Ron Aceto"],
   ["ai-technology-education.html", "AI &amp; Technology Education Portfolio"],
+  ["ai-technology-education.html", "Module A: AI Literacy Starter Kit"],
+  ["ai-technology-education.html", "AI should help students think better, not think less."],
+  ["ai-technology-education.html", "student_ai_agreement_final.pdf"],
   ["ai-technology-education.html", "AI + Coding Starter Kit"],
   ["ai-technology-education.html", "Cybersecurity &amp; Digital Ethics Starter Kit"],
   ["ai-technology-education.html", "Preview resource"],
@@ -25,12 +28,16 @@ const requiredFragments = [
 ];
 
 const aiLiteracyResourceFiles = [
-  "01_student_ai_agreement.docx",
-  "02_responsible_ai_use_checklist.docx",
-  "03_better_prompts_vs_shortcuts_activity.docx",
-  "04_lesson_plan_ai_as_learning_partner.docx",
-  "05_teacher_implementation_guide.docx",
-  "06_video_walkthrough_script.docx",
+  "student_ai_agreement_cover_final.pdf",
+  "student_ai_agreement_final.pdf",
+  "responsible_ai_use_checklist_final.pdf",
+  "better_prompts_vs_shortcuts_activity_final.pdf",
+  "lesson_plan_ai_as_learning_partner_final.pdf",
+  "teacher_implementation_guide_final.pdf",
+  "video_walkthrough_script_final.pdf",
+  "module_a_badge_final.png",
+  "module_a_thumbnail_final.png",
+  "student_ai_agreement_resource_card_final.png",
 ];
 
 const aiCodingResourceFiles = [
