@@ -14,6 +14,7 @@ const routes = [
 const requiredFragments = [
   ["index.html", "Ron Aceto"],
   ["ai-technology-education.html", "AI &amp; Technology Education Portfolio"],
+  ["ai-technology-education.html", "Preview resource"],
   ["ai-technology-education.html", "These resources include Tennessee Computer Science Foundations standards connections where applicable."],
   ["contact.html", "ronaceto@outlook.com"],
   ["site.css", ":root"],
