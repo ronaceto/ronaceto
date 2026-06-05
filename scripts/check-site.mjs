@@ -17,7 +17,9 @@ const requiredFragments = [
   ["ai-technology-education.html", "Module A: AI Literacy Starter Kit"],
   ["ai-technology-education.html", "AI should help students think better, not think less."],
   ["ai-technology-education.html", "student_ai_agreement_final.pdf"],
-  ["ai-technology-education.html", "AI + Coding Starter Kit"],
+  ["ai-technology-education.html", "Module B: AI + Coding Starter Kit"],
+  ["ai-technology-education.html", "AI should help students code better, not avoid learning code."],
+  ["ai-technology-education.html", "lesson_plan_ai_as_coding_coach_final.pdf"],
   ["ai-technology-education.html", "Cybersecurity &amp; Digital Ethics Starter Kit"],
   ["ai-technology-education.html", "Preview resource"],
   ["ai-technology-education.html", "These resources include Tennessee Computer Science Foundations standards connections where applicable."],
@@ -41,13 +43,17 @@ const aiLiteracyResourceFiles = [
 ];
 
 const aiCodingResourceFiles = [
-  "01_lesson_plan_ai_as_coding_coach.pdf",
-  "02_python_debugging_activity.pdf",
-  "03_ask_ai_better_coding_questions_handout.pdf",
-  "04_responsible_ai_use_in_coding_rubric.pdf",
-  "05_student_safe_ai_coding_conversation_sample.pdf",
-  "06_teacher_implementation_guide_ai_coding.pdf",
-  "07_video_walkthrough_script_ai_debugging_without_cheating.pdf",
+  "lesson_plan_ai_as_coding_coach_final.pdf",
+  "python_debugging_activity_final.pdf",
+  "ask_ai_better_coding_questions_handout_final.pdf",
+  "responsible_ai_use_in_coding_rubric_final.pdf",
+  "student_safe_ai_coding_conversation_sample_final.pdf",
+  "teacher_implementation_guide_ai_coding_final.pdf",
+  "video_walkthrough_script_ai_debugging_without_cheating_final.pdf",
+  "module_b_badge_final.png",
+  "module_b_badge_header.png",
+  "module_b_thumbnail_final.png",
+  "module_b_resource_card_lesson_plan_final.png",
 ];
 
 const cybersecurityResourceFiles = [
