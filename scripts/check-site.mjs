@@ -28,6 +28,9 @@ const requiredFragments = [
   ["ai-coding-starter-kit.html", "AI should help students code better, not avoid learning code."],
   ["ai-coding-starter-kit.html", "lesson_plan_ai_as_coding_coach_final.pdf"],
   ["cybersecurity-digital-ethics-starter-kit.html", "Cybersecurity &amp; Digital Ethics Starter Kit"],
+  ["cybersecurity-digital-ethics-starter-kit.html", "Security skills should help students protect people, systems, and information."],
+  ["cybersecurity-digital-ethics-starter-kit.html", "lesson_plan_spot_the_phish_final.pdf"],
+  ["cybersecurity-digital-ethics-starter-kit.html", "module_c_thumbnail_final.png"],
   ["cybersecurity-digital-ethics-starter-kit.html", "Standards Connection: These resources may support Tennessee Computer Science Foundations"],
   ["ai-technology-education.html", "Cybersecurity &amp; Digital Ethics Starter Kit"],
   ["contact.html", "ronaceto@outlook.com"],
@@ -62,14 +65,17 @@ const aiCodingResourceFiles = [
 ];
 
 const cybersecurityResourceFiles = [
-  "00_module_c_overview.docx",
-  "01_lesson_plan_spot_the_phish.docx",
-  "02_password_strength_activity.docx",
-  "03_digital_footprint_reflection.docx",
-  "04_cybersecurity_careers_one_pager.docx",
-  "05_ai_cybersecurity_discussion_prompt.docx",
-  "06_teacher_implementation_guide_cybersecurity.docx",
-  "07_video_walkthrough_script_why_cybersecurity_belongs.docx",
+  "module_c_overview_final.pdf",
+  "lesson_plan_spot_the_phish_final.pdf",
+  "password_strength_activity_final.pdf",
+  "digital_footprint_reflection_final.pdf",
+  "cybersecurity_careers_one_pager_final.pdf",
+  "ai_cybersecurity_discussion_prompt_final.pdf",
+  "teacher_implementation_guide_cybersecurity_final.pdf",
+  "video_walkthrough_script_why_cybersecurity_belongs_final.pdf",
+  "module_c_badge_final.png",
+  "module_c_thumbnail_final.png",
+  "module_c_resource_card_spot_the_phish_final.png",
 ];
 
 for (const route of routes) {

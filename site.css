@@ -1,4 +1,4 @@
-:root{--bg:#f8fafc;--text:#0f172a;--muted:#475569;--brand:#1d4ed8;--brand-dark:#1e40af;--card:#ffffff;--ai-primary:#1A3A5F;--ai-teal:#74A4BC;--module-b-accent:#2C6E91;--ai-light:#F5F7FA;--ai-dark:#333333}
+:root{--bg:#f8fafc;--text:#0f172a;--muted:#475569;--brand:#1d4ed8;--brand-dark:#1e40af;--card:#ffffff;--ai-primary:#1A3A5F;--ai-teal:#74A4BC;--module-b-accent:#2C6E91;--module-c-accent:#C48337;--ai-light:#F5F7FA;--ai-dark:#333333}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
 header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e2e8f0;z-index:10}
@@ -95,7 +95,7 @@ input,textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8p
 .status-pill{align-self:flex-start;padding:5px 9px;border-radius:999px;background:#dcfce7;color:#166534;font-size:.78rem;font-weight:700}
 .module-choice-a{border-top:5px solid var(--ai-teal)}
 .module-choice-b{border-top:5px solid var(--module-b-accent)}
-.module-choice-c{border-top:5px solid #334155}
+.module-choice-c{border-top:5px solid var(--module-c-accent)}
 .hub-guidance{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:18px;align-items:stretch}
 .hub-guidance p{color:#475569}
 .guidance-card{padding:18px;border:1px solid #dbeafe;border-radius:10px;background:#f8fafc}
@@ -150,9 +150,29 @@ input,textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8p
 .module-b-card__button,.module-b-button{margin-top:auto;text-align:center;background:var(--module-b-accent)}
 .module-b-card__button:hover,.module-b-button:hover{background:#1f5775}
 .module-b-cta{border-color:#b9d5e4;background:#eef6fa}
-.module-c-section{background:#fff;border:1px solid #e2e8f0}
-.module-c-section .module-header h1{color:var(--ai-primary)}
-.module-c-section .resource-card{border-color:#dbe4ea;box-shadow:0 8px 20px rgba(15,23,42,.05)}
+.module-c-section{background:var(--ai-light);border:1px solid #eadbc7;color:var(--ai-dark)}
+.module-c-section h1,.module-c-section h2,.module-c-section h3{color:var(--ai-primary)}
+.module-c-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:22px;align-items:center}
+.module-c-hero .module-subtitle{color:var(--ai-dark);font-size:1.08rem;font-weight:600}
+.module-c-thumbnail{width:100%;max-height:360px;object-fit:cover;border-radius:10px;border:1px solid #eadbc7;box-shadow:0 12px 30px rgba(26,58,95,.16)}
+.module-c-callout{display:flex;align-items:center;gap:14px;margin-top:18px;padding:16px;border-left:6px solid var(--module-c-accent);border-radius:8px;background:#fff;box-shadow:0 10px 24px rgba(26,58,95,.08)}
+.module-c-callout img{width:54px;height:54px;object-fit:contain;flex:0 0 auto}
+.module-c-callout strong{color:var(--ai-primary);font-size:1.25rem;line-height:1.25}
+.module-c-feature{display:grid;grid-template-columns:210px minmax(0,1fr);gap:18px;align-items:center;margin-top:20px;padding:18px;border:1px solid #eadbc7;border-radius:10px;background:#fff;box-shadow:0 10px 24px rgba(26,58,95,.07)}
+.module-c-feature img{width:100%;border-radius:8px;border:1px solid #e2e8f0}
+.module-c-feature h2{margin:0 0 8px}
+.module-c-feature p{margin-top:0;color:#415161}
+.module-c-resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:16px;margin-top:20px}
+.module-c-card{position:relative;display:flex;flex-direction:column;gap:14px;min-height:100%;padding:18px;border:1px solid #eadbc7;border-radius:12px;background:#fff;box-shadow:0 10px 26px rgba(26,58,95,.08);overflow:hidden}
+.module-c-card::before{content:"";position:absolute;inset:0 auto 0 0;width:6px;background:var(--module-c-accent)}
+.module-c-card__icon{width:46px;height:46px;object-fit:contain;margin-left:8px}
+.module-c-card__body{display:flex;flex-direction:column;gap:8px;padding-left:8px}
+.module-c-card__label{align-self:flex-start;padding:5px 8px;border-radius:999px;background:#f7eadb;color:#653d10;font-size:.76rem;font-weight:700;text-transform:uppercase}
+.module-c-card__title{margin:0;font-size:1.12rem;line-height:1.25}
+.module-c-card__desc,.module-c-card__meta{margin:0;color:#415161}
+.module-c-card__meta{font-size:.93rem}
+.module-c-card__button,.module-c-button{margin-top:auto;text-align:center;background:var(--module-c-accent)}
+.module-c-card__button:hover,.module-c-button:hover{background:#9a652b}
 .module-cta,.next-preview{margin-top:18px;padding:18px;border-radius:10px}
 .module-cta{border:1px solid #bfdbfe;background:#eff6ff}
 .module-cta h3,.next-preview h3{margin-top:0}
@@ -161,4 +181,4 @@ input,textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8p
 .cta-section{background:#0f172a;color:#f8fafc}
 .cta-section p{color:#cbd5e1}
 @media (max-width:900px){.module-choice-grid{grid-template-columns:1fr}.ai-hub-hero,.hub-guidance{grid-template-columns:1fr}.ai-hub-hero h1{font-size:1.8rem}.hub-snapshot{gap:12px;padding:16px}.hub-snapshot strong{font-size:1.1rem}.hub-stats{grid-template-columns:repeat(3,1fr)}.hub-stats span{display:block;text-align:center;padding:8px}.hub-stats b{display:block}}
-@media (max-width:800px){.button-row .btn{width:100%;text-align:center}.mini-grid{grid-template-columns:1fr}.resource-card{padding:16px}.module-a-hero,.module-a-feature,.module-b-hero,.module-b-feature{grid-template-columns:1fr}.module-a-callout,.module-b-callout{align-items:flex-start}.module-a-callout strong,.module-b-callout strong{font-size:1.08rem}.module-a-feature img,.module-b-feature img{max-width:220px}.module-a-card,.module-b-card{padding:16px}}
+@media (max-width:800px){.button-row .btn{width:100%;text-align:center}.mini-grid{grid-template-columns:1fr}.resource-card{padding:16px}.module-a-hero,.module-a-feature,.module-b-hero,.module-b-feature,.module-c-hero,.module-c-feature{grid-template-columns:1fr}.module-a-callout,.module-b-callout,.module-c-callout{align-items:flex-start}.module-a-callout strong,.module-b-callout strong,.module-c-callout strong{font-size:1.08rem}.module-a-feature img,.module-b-feature img,.module-c-feature img{max-width:220px}.module-a-card,.module-b-card,.module-c-card{padding:16px}}
