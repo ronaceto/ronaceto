@@ -16,12 +16,16 @@ const routes = [
 
 const requiredFragments = [
   ["index.html", "Ron Aceto"],
-  ["ai-technology-education.html", "AI &amp; Technology Education Portfolio"],
-  ["ai-technology-education.html", "AI should help students think better, not think less."],
-  ["ai-technology-education.html", "Choose a Starter Kit"],
-  ["ai-technology-education.html", "/ai-literacy-starter-kit"],
-  ["ai-technology-education.html", "/ai-coding-starter-kit"],
-  ["ai-technology-education.html", "/cybersecurity-digital-ethics-starter-kit"],
+  ["index.html", "Experienced Technology Leader and Educator Pivoting to CTE Teaching"],
+  ["index.html", "/1masterronacetoresume.pdf"],
+  ["teaching-philosophy.html", "How Industry Experience Shapes My Teaching"],
+  ["teaching-philosophy.html", "Evidence: AI + Coding lesson artifacts"],
+  ["portfolio.html", "Teaching Portfolio"],
+  ["portfolio.html", "Explore Classroom Artifacts"],
+  ["portfolio.html", "/ai-literacy-starter-kit"],
+  ["portfolio.html", "/ai-coding-starter-kit"],
+  ["portfolio.html", "/cybersecurity-digital-ethics-starter-kit"],
+  ["ai-technology-education.html", "url=/portfolio"],
   ["ai-literacy-starter-kit.html", "Module A: AI Literacy Starter Kit"],
   ["ai-literacy-starter-kit.html", "student_ai_agreement_final_v2.pdf"],
   ["ai-coding-starter-kit.html", "Module B: AI + Coding Starter Kit"],
@@ -32,9 +36,22 @@ const requiredFragments = [
   ["cybersecurity-digital-ethics-starter-kit.html", "lesson_plan_spot_the_phish_final.pdf"],
   ["cybersecurity-digital-ethics-starter-kit.html", "module_c_thumbnail_final.png"],
   ["cybersecurity-digital-ethics-starter-kit.html", "Standards Connection: These resources may support Tennessee Computer Science Foundations"],
-  ["ai-technology-education.html", "Cybersecurity &amp; Digital Ethics Starter Kit"],
+  ["professional-development.html", "Teaching Licensure Progress"],
+  ["professional-development.html", "Currently preparing for Praxis: Computer Science"],
+  ["experience.html", "Interim Computer Science Teacher, Collierville High School (February-May 2026)"],
+  ["experience.html", "saving approximately $750K annually"],
   ["contact.html", "ronaceto@outlook.com"],
   ["site.css", ":root"],
+];
+
+const forbiddenFragments = [
+  ["portfolio.html", "Placeholder"],
+  ["portfolio.html", "Phase 1"],
+  ["portfolio.html", "Portfolio Samples"],
+  ["professional-development.html", "Pending"],
+  ["professional-development.html", "Passed.</dd>"],
+  ["index.html", "Currently an interim"],
+  ["index.html", "Curriculum Developer | Team Builder"],
 ];
 
 const aiLiteracyResourceFiles = [
@@ -90,6 +107,13 @@ for (const [file, fragment] of requiredFragments) {
   const contents = readFileSync(file, "utf8");
   if (!contents.includes(fragment)) {
     throw new Error(`${file} is missing expected text: ${fragment}`);
+  }
+}
+
+for (const [file, fragment] of forbiddenFragments) {
+  const contents = readFileSync(file, "utf8");
+  if (contents.includes(fragment)) {
+    throw new Error(`${file} still contains deprecated text: ${fragment}`);
   }
 }
 
