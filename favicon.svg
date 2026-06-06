@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ron Aceto site icon">
-  <rect width="64" height="64" rx="16" fill="#1A3A5F"/>
-  <circle cx="46" cy="18" r="10" fill="#C48337"/>
+  <rect width="64" height="64" rx="16" fill="#214D94"/>
+  <circle cx="46" cy="18" r="10" fill="#C68439"/>
   <path d="M18 42V22h14c7 0 11 4 11 10 0 5-3 8-8 9l9 13H33l-8-12h-7Z" fill="#F7FAFF"/>
-  <path d="M18 31h12c3 0 5-2 5-4s-2-4-5-4H18Z" fill="#74A4BC"/>
+  <path d="M18 31h12c3 0 5-2 5-4s-2-4-5-4H18Z" fill="#E0ECFF"/>
 </svg>

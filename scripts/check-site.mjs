@@ -13,6 +13,7 @@ const routes = [
   "experience.html",
   "contact.html",
   "thank-you.html",
+  "standards.html",
 ];
 
 const requiredFragments = [
@@ -38,6 +39,9 @@ const requiredFragments = [
   ["cybersecurity-digital-ethics-starter-kit.html", "Security skills should help students protect people, systems, and information."],
   ["cybersecurity-digital-ethics-starter-kit.html", "lesson_plan_spot_the_phish_final.pdf"],
   ["cybersecurity-digital-ethics-starter-kit.html", "module_c_thumbnail_final.png"],
+  ["ai-literacy-starter-kit.html", "Standards aligned"],
+  ["ai-coding-starter-kit.html", "Standards aligned"],
+  ["cybersecurity-digital-ethics-starter-kit.html", "Standards aligned"],
   ["cybersecurity-digital-ethics-starter-kit.html", "Standards Connection: These resources may support Tennessee Computer Science Foundations"],
   ["professional-development.html", "Teaching Licensure Progress"],
   ["professional-development.html", "Currently preparing for Praxis: Computer Science"],
@@ -47,9 +51,14 @@ const requiredFragments = [
   ["contact.html", "action=\"/thank-you\""],
   ["contact.html", "ronaceto@outlook.com"],
   ["thank-you.html", "Your message has been received"],
-  ["favicon.svg", "#1A3A5F"],
+  ["standards.html", "Standards Alignment Notes"],
+  ["standards.html", "CSF 3.1"],
+  ["favicon.svg", "#214D94"],
   ["site.css", ":root"],
+  ["site.css", "--brand:#214D94"],
+  ["site.css", "--accent:#C68439"],
   ["site.css", "linear-gradient(135deg,#eff6ff 0%,#e0ecff 100%)"],
+  ["site.css", ".standards-tag"],
   ["site.css", ".mission-callout"],
 ];
 
@@ -61,6 +70,9 @@ const forbiddenFragments = [
   ["professional-development.html", "Passed.</dd>"],
   ["index.html", "Currently an interim"],
   ["index.html", "Curriculum Developer | Team Builder"],
+  ["ai-literacy-starter-kit.html", "<strong>Standards:</strong>"],
+  ["ai-coding-starter-kit.html", "<strong>Standards:</strong>"],
+  ["cybersecurity-digital-ethics-starter-kit.html", "<strong>Standards:</strong>"],
 ];
 
 const aiLiteracyResourceFiles = [

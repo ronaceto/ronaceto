@@ -12,4 +12,5 @@
 /experience /experience.html 200
 /contact /contact.html 200
 /thank-you /thank-you.html 200
+/standards /standards.html 200
 /resources/* /public/resources/:splat 200

@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standards Alignment | Ron Aceto</title>
+  <meta name="description" content="Standards alignment notes for Ron Aceto's AI literacy, AI coding, cybersecurity, and digital ethics teaching portfolio resources.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">Ron Aceto</div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="visually-hidden">Toggle navigation menu</span><span aria-hidden="true">&#9776;</span></button>
+      <ul class="menu" id="site-menu"><li><a href="/">Home</a></li><li><a href="/teaching-philosophy">Teaching Philosophy</a></li><li><a href="/portfolio">Teaching Portfolio</a></li><li><a href="/experience">Experience</a></li><li><a href="/professional-development">Certifications</a></li><li><a href="/contact">Contact</a></li></ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <p class="eyebrow">Teaching portfolio</p>
+      <h1>Standards Alignment Notes</h1>
+      <p class="lead">The artifact cards use a compact â€œStandards alignedâ€ tag to keep resource pages easier to scan. The detailed standards references below are cautious instructional alignments, not district-approved standards documents.</p>
+      <p>Final alignment should be confirmed against local district pacing, approved course placement, and teacher directions.</p>
+    </section>
+    <section>
+      <h2>Module A: AI Literacy</h2>
+      <div class="cards">
+        <article class="card"><h3>Primary Connections</h3><p>Resources may support Computer Science Foundations standards related to social, legal, and ethical issues, troubleshooting, responsible technology use, data security, and verification habits.</p></article>
+        <article class="card"><h3>Common References</h3><p>Examples include CSF 8.1, CSF 9.2, CSF 13.1, and CSF 14.1 depending on the lesson, checklist, reflection tool, or implementation guide.</p></article>
+      </div>
+    </section>
+    <section>
+      <h2>Module B: AI + Coding</h2>
+      <div class="cards">
+        <article class="card"><h3>Primary Connections</h3><p>Resources may support standards related to troubleshooting, ethical AI use, code interpretation, debugging, testing, documentation, and student ownership of programming work.</p></article>
+        <article class="card"><h3>Common References</h3><p>Examples include CSF 9.2, CSF 13.1, CSF 15.1, CSF 16.1, and CSF 16.2 depending on classroom use.</p></article>
+      </div>
+    </section>
+    <section>
+      <h2>Module C: Cybersecurity &amp; Digital Ethics</h2>
+      <div class="cards">
+        <article class="card"><h3>Primary Connections</h3><p>Resources may support standards related to occupations, troubleshooting, social/legal/ethical issues, data security, security breaches, and security practices.</p></article>
+        <article class="card"><h3>Common References</h3><p>Examples include CSF 3.1, CSF 9.2, CSF 13.1, CSF 14.1, CSF 14.2, and CSF 14.3 depending on the resource and course placement.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><div class="inner"><div>&copy; <span id="year"></span> Ron Aceto</div><div><a href="/">Home</a> &middot; <a href="/portfolio">Teaching Portfolio</a> &middot; <a href="/contact">Contact</a></div></div></footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();const menuToggle=document.querySelector(".menu-toggle");const siteMenu=document.getElementById("site-menu");if(menuToggle&&siteMenu){menuToggle.addEventListener("click",()=>{const expanded=menuToggle.getAttribute("aria-expanded")==="true";menuToggle.setAttribute("aria-expanded",String(!expanded));siteMenu.classList.toggle("is-open");});}</script>
+</body>
+</html>
