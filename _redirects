@@ -11,4 +11,5 @@
 /professional-development /professional-development.html 200
 /experience /experience.html 200
 /contact /contact.html 200
+/thank-you /thank-you.html 200
 /resources/* /public/resources/:splat 200

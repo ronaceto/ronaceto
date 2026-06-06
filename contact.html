@@ -1,1 +1,71 @@
-﻿<!doctype html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Contact | Ron Aceto</title><meta name='description' content='Contact Ron Aceto about computer science, cybersecurity, business technology, and CTE teaching opportunities.'><link rel='stylesheet' href='/site.css'></head><body><header><nav class='nav' aria-label='Main navigation'><div class='brand'>Ron Aceto</div><button class='menu-toggle' type='button' aria-expanded='false' aria-controls='site-menu'><span class='visually-hidden'>Toggle navigation menu</span><span aria-hidden='true'>&#9776;</span></button><ul class='menu' id='site-menu'><li><a href='/'>Home</a></li><li><a href='/teaching-philosophy'>Teaching Philosophy</a></li><li><a href='/portfolio'>Teaching Portfolio</a></li><li><a href='/experience'>Experience</a></li><li><a href='/professional-development'>Certifications</a></li><li><a href='/contact'>Contact</a></li></ul></nav></header><main><section><h1>Contact Ron</h1><p>If you would like to connect about full-time teaching opportunities, computer science or CTE programs, AI literacy, cybersecurity instruction, or business technology education, please use the form below.</p><form action='mailto:ronaceto@outlook.com' method='post' enctype='text/plain'><label for='name'>Name</label><input id='name' name='name' required aria-required='true'><label for='email'>Email</label><input id='email' type='email' name='email' required aria-required='true'><label for='subject'>Subject</label><input id='subject' name='subject' required aria-required='true'><label for='message'>Message</label><textarea id='message' name='message' rows='6' required aria-required='true'></textarea><p><button class='btn' type='submit'>Send Message</button></p></form><p>Direct email: <a href='mailto:ronaceto@outlook.com'>ronaceto@outlook.com</a></p><p><a class='btn btn-secondary' href='/1masterronacetoresume.pdf' target='_blank' rel='noopener'>Download Resume</a></p><p><small>Your message will be kept confidential and used only to respond to your inquiry.</small></p></section></main><footer><div class='inner'><div>&copy; <span id='year'></span> Ron Aceto</div><div><a href='/'>Home</a> &middot; <a href='/teaching-philosophy'>Teaching Philosophy</a> &middot; <a href='/portfolio'>Teaching Portfolio</a> &middot; <a href='/experience'>Experience</a> &middot; <a href='/professional-development'>Certifications</a> &middot; <a href='/contact'>Contact</a> &middot; <a class='icon-link' href='https://www.linkedin.com/in/ron-aceto/'><span aria-hidden='true'>LinkedIn</span></a></div></div></footer><script>document.getElementById('year').textContent=new Date().getFullYear();const menuToggle=document.querySelector('.menu-toggle');const siteMenu=document.getElementById('site-menu');if(menuToggle&&siteMenu){menuToggle.addEventListener('click',()=>{const expanded=menuToggle.getAttribute('aria-expanded')==='true';menuToggle.setAttribute('aria-expanded',String(!expanded));siteMenu.classList.toggle('is-open');});}</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Ron Aceto</title>
+  <meta name="description" content="Contact Ron Aceto about computer science, cybersecurity, business technology, and CTE teaching opportunities.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">Ron Aceto</div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="visually-hidden">Toggle navigation menu</span><span aria-hidden="true">&#9776;</span></button>
+      <ul class="menu" id="site-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/teaching-philosophy">Teaching Philosophy</a></li>
+        <li><a href="/portfolio">Teaching Portfolio</a></li>
+        <li><a href="/experience">Experience</a></li>
+        <li><a href="/professional-development">Certifications</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h1>Contact Ron</h1>
+      <p class="lead">I welcome conversations about full-time teaching opportunities, computer science or CTE programs, AI literacy, cybersecurity instruction, and business technology education.</p>
+      <form name="contact" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="visually-hidden">
+          <label>Do not fill this out if you are human: <input name="bot-field"></label>
+        </p>
+        <label for="name">Name</label>
+        <input id="name" name="name" autocomplete="name" required aria-required="true">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" autocomplete="email" required aria-required="true">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+        <p><button class="btn" type="submit">Send Message</button></p>
+      </form>
+      <p class="form-note">Prefer email? Reach me directly at <a href="mailto:ronaceto@outlook.com">ronaceto@outlook.com</a>.</p>
+      <p><a class="btn btn-secondary" href="/1masterronacetoresume.pdf" target="_blank" rel="noopener">Download Resume</a></p>
+      <p><small>Your message will be kept confidential and used only to respond to your inquiry.</small></p>
+    </section>
+    <section class="mission-callout">
+      <h2>Mission</h2>
+      <p>My goal is to help students think clearly, solve problems, and use technology responsibly in school, work, and everyday life.</p>
+    </section>
+  </main>
+  <footer>
+    <div class="inner">
+      <div>&copy; <span id="year"></span> Ron Aceto</div>
+      <div><a href="/">Home</a> &middot; <a href="/teaching-philosophy">Teaching Philosophy</a> &middot; <a href="/portfolio">Teaching Portfolio</a> &middot; <a href="/experience">Experience</a> &middot; <a href="/professional-development">Certifications</a> &middot; <a href="/contact">Contact</a> &middot; <a class="icon-link" href="https://www.linkedin.com/in/ron-aceto/"><span aria-hidden="true">LinkedIn</span></a></div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteMenu = document.getElementById("site-menu");
+    if (menuToggle && siteMenu) {
+      menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        siteMenu.classList.toggle("is-open");
+      });
+    }
+  </script>
+</body>
+</html>

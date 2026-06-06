@@ -12,14 +12,17 @@ const routes = [
   "professional-development.html",
   "experience.html",
   "contact.html",
+  "thank-you.html",
 ];
 
 const requiredFragments = [
   ["index.html", "Ron Aceto"],
   ["index.html", "Experienced Technology Leader and Educator Pivoting to CTE Teaching"],
   ["index.html", "/1masterronacetoresume.pdf"],
+  ["index.html", "mission-callout"],
   ["teaching-philosophy.html", "How Industry Experience Shapes My Teaching"],
   ["teaching-philosophy.html", "Evidence: AI + Coding lesson artifacts"],
+  ["teaching-philosophy.html", "<svg viewBox=\"0 0 24 24\">"],
   ["portfolio.html", "Teaching Portfolio"],
   ["portfolio.html", "Explore Classroom Artifacts"],
   ["portfolio.html", "/ai-literacy-starter-kit"],
@@ -40,8 +43,14 @@ const requiredFragments = [
   ["professional-development.html", "Currently preparing for Praxis: Computer Science"],
   ["experience.html", "Interim Computer Science Teacher, Collierville High School (February-May 2026)"],
   ["experience.html", "saving approximately $750K annually"],
+  ["contact.html", "data-netlify=\"true\""],
+  ["contact.html", "action=\"/thank-you\""],
   ["contact.html", "ronaceto@outlook.com"],
+  ["thank-you.html", "Your message has been received"],
+  ["favicon.svg", "#1A3A5F"],
   ["site.css", ":root"],
+  ["site.css", "linear-gradient(135deg,#eff6ff 0%,#e0ecff 100%)"],
+  ["site.css", ".mission-callout"],
 ];
 
 const forbiddenFragments = [
@@ -100,6 +109,9 @@ for (const route of routes) {
   }
   if (!html.includes("site.css")) {
     throw new Error(`${route} does not link to site.css.`);
+  }
+  if (!html.includes("/favicon.svg")) {
+    throw new Error(`${route} does not link to favicon.svg.`);
   }
 }
 
