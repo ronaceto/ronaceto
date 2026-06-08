@@ -1,33 +1,52 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=/contact">
-
-  <title>Contact Ron Aceto | CTE & Technology Education</title>
-  <meta name="description" content="References and feedback inquiries for Ron Aceto are directed through the contact page.">
-  <link rel="canonical" href="https://ronaceto.com/contact">
+  <title>References &amp; Feedback | Ron Aceto</title>
+  <meta name="description" content="Reference and professional feedback inquiries for Ron Aceto should be directed through the contact page.">
+  <link rel="canonical" href="https://ronaceto.com/feedback">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ron Aceto">
-  <meta property="og:title" content="Contact Ron Aceto | CTE & Technology Education">
-  <meta property="og:description" content="References and feedback inquiries for Ron Aceto are directed through the contact page.">
-  <meta property="og:url" content="https://ronaceto.com/contact">
+  <meta property="og:title" content="References &amp; Feedback | Ron Aceto">
+  <meta property="og:description" content="Reference and professional feedback inquiries for Ron Aceto should be directed through the contact page.">
+  <meta property="og:url" content="https://ronaceto.com/feedback">
   <meta property="og:image" content="https://ronaceto.com/ron-icon.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact Ron Aceto | CTE & Technology Education">
-  <meta name="twitter:description" content="References and feedback inquiries for Ron Aceto are directed through the contact page.">
+  <meta name="twitter:title" content="References &amp; Feedback | Ron Aceto">
+  <meta name="twitter:description" content="Reference and professional feedback inquiries for Ron Aceto should be directed through the contact page.">
   <meta name="twitter:image" content="https://ronaceto.com/ron-icon.png">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/site.css">
 </head>
 <body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">Ron Aceto</div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="visually-hidden">Toggle navigation menu</span><span aria-hidden="true">&#9776;</span></button>
+      <ul class="menu" id="site-menu"><li><a href="/">Home</a></li><li><a href="/teaching-philosophy">Teaching Philosophy</a></li><li><a href="/portfolio">Teaching Portfolio</a></li><li><a href="/experience">Experience</a></li><li><a href="/professional-development">Certifications</a></li><li><a href="/contact">Contact</a></li></ul>
+    </nav>
+  </header>
   <main>
     <section>
-      <h1>Contact Ron</h1>
-      <p>References and feedback can be discussed through the <a href="/contact">contact page</a>.</p>
-      <p><a class="btn" href="/contact">Open Contact Page</a></p>
+      <p class="eyebrow">Professional inquiries</p>
+      <h1>References &amp; Feedback</h1>
+      <p class="lead">This page is for reference checks, professional feedback, and follow-up conversations related to Ron Aceto's teaching portfolio, CTE readiness, and technology education work.</p>
+      <p>Public testimonials are not posted here. Hiring committees, school administrators, district leaders, and professional contacts can use the contact page to request references or share feedback directly.</p>
+      <p><a class="btn" href="/contact">Contact Ron</a></p>
     </section>
   </main>
+  <footer><div class="inner"><div>&copy; 2026 Ron Aceto. All rights reserved.</div><div><a href="/">Home</a> &middot; <a href="/teaching-philosophy">Teaching Philosophy</a> &middot; <a href="/portfolio">Teaching Portfolio</a> &middot; <a href="/experience">Experience</a> &middot; <a href="/professional-development">Certifications</a> &middot; <a href="/contact">Contact</a> &middot; <a class="icon-link" href="https://www.linkedin.com/in/ron-aceto/"><span aria-hidden="true">LinkedIn</span></a></div></div></footer>
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteMenu = document.getElementById("site-menu");
+    if (menuToggle && siteMenu) {
+      menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        siteMenu.classList.toggle("is-open");
+      });
+    }
+  </script>
 </body>
 </html>
