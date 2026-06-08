@@ -3,6 +3,7 @@ import path from "node:path";
 
 const routes = [
   "index.html",
+  "about.html",
   "teaching-philosophy.html",
   "ai-technology-education.html",
   "ai-literacy-starter-kit.html",
@@ -34,6 +35,9 @@ const requiredFragments = [
   ["index.html", "proof-strip"],
   ["index.html", "/ron-aceto-resume.pdf"],
   ["index.html", "mission-callout"],
+  ["about.html", "From Software Leadership to Career-Connected Technology Education"],
+  ["about.html", "30+ years of software, implementation, analytics, and health IT leadership."],
+  ["about.html", "Explore the Full Teaching Philosophy"],
   ["teaching-philosophy.html", "How Industry Experience Shapes My Teaching"],
   ["teaching-philosophy.html", "Evidence: AI + Coding lesson artifacts"],
   ["teaching-philosophy.html", "<svg viewBox=\"0 0 24 24\">"],
@@ -86,6 +90,7 @@ const requiredFragments = [
   ["standards.html", "Standards Alignment Notes"],
   ["standards.html", "CSF 3.1"],
   ["robots.txt", "Sitemap: https://ronaceto.com/sitemap.xml"],
+  ["sitemap.xml", "https://ronaceto.com/about"],
   ["sitemap.xml", "https://ronaceto.com/portfolio"],
   ["favicon.svg", "#214D94"],
   ["site.css", ":root"],
@@ -95,6 +100,7 @@ const requiredFragments = [
   ["site.css", ".standards-tag"],
   ["site.css", ".mission-callout"],
   ["index.html", "&copy; 2026 Ron Aceto. All rights reserved."],
+  ["_redirects", "/about /about.html 200"],
 ];
 
 const forbiddenFragments = [
@@ -196,6 +202,24 @@ for (const file of htmlFiles) {
   if (/netlify\.app/i.test(html)) {
     throw new Error(`${file} references an out-of-scope Netlify project.`);
   }
+  if (!html.includes('<meta name="description" content="')) {
+    throw new Error(`${file} is missing a meta description.`);
+  }
+  for (const fragment of ['property="og:title"', 'property="og:description"', 'property="og:image"', 'name="twitter:title"', 'name="twitter:description"', 'name="twitter:image"']) {
+    if (!html.includes(fragment)) {
+      throw new Error(`${file} is missing social metadata: ${fragment}`);
+    }
+  }
+  if (!html.includes('<a href="/about">About</a>')) {
+    throw new Error(`${file} is missing the About navigation link.`);
+  }
+  for (const match of html.matchAll(/<img\b[^>]*>/g)) {
+    const tag = match[0];
+    const alt = tag.match(/\salt=["']([^"']*)["']/);
+    if (!alt || alt[1].trim().length < 12 || /^(image|photo|thumbnail|badge|preview)$/i.test(alt[1].trim())) {
+      throw new Error(`${file} has a missing or generic image alt attribute: ${tag}`);
+    }
+  }
   for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/g)) {
     const url = match[1];
     if (url.startsWith("mailto:") || url.startsWith("#")) continue;
@@ -206,6 +230,15 @@ for (const file of htmlFiles) {
       throw new Error(`${file} links to missing internal target: ${url}`);
     }
   }
+}
+
+const missionPhrase = "My goal is to help students think clearly, solve problems, and use technology responsibly in school, work, and everyday life.";
+const missionOccurrences = htmlFiles.reduce((count, file) => {
+  const html = readFileSync(file, "utf8");
+  return count + (html.match(new RegExp(missionPhrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length;
+}, 0);
+if (missionOccurrences !== 1) {
+  throw new Error(`Expected exactly one site-wide mission statement; found ${missionOccurrences}.`);
 }
 
 for (const [file, fragment] of requiredFragments) {

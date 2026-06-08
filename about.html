@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Ron Aceto | Career-Connected Technology Educator</title>
+  <meta name="description" content="About Ron Aceto, a former health IT software leader now focused on career-connected CTE, business technology, computer science, cybersecurity, digital ethics, and AI literacy education.">
+  <link rel="canonical" href="https://ronaceto.com/about">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ron Aceto">
+  <meta property="og:title" content="About Ron Aceto | Career-Connected Technology Educator">
+  <meta property="og:description" content="Ron Aceto's career journey from health IT software leadership to career-connected technology education.">
+  <meta property="og:url" content="https://ronaceto.com/about">
+  <meta property="og:image" content="https://ronaceto.com/ron-icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Ron Aceto | Career-Connected Technology Educator">
+  <meta name="twitter:description" content="Ron Aceto's career journey from health IT software leadership to career-connected technology education.">
+  <meta name="twitter:image" content="https://ronaceto.com/ron-icon.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="brand">Ron Aceto</div>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="visually-hidden">Toggle navigation menu</span><span aria-hidden="true">&#9776;</span></button>
+      <ul class="menu" id="site-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/teaching-philosophy">Teaching Philosophy</a></li>
+        <li><a href="/portfolio">Teaching Portfolio</a></li>
+        <li><a href="/experience">Experience</a></li>
+        <li><a href="/professional-development">Certifications</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">About Ron Aceto</p>
+        <h1>From Software Leadership to Career-Connected Technology Education</h1>
+        <p class="lead">Ron Aceto is a former health IT software leader now focused on helping high school students connect computer science, business technology, cybersecurity, digital ethics, and AI literacy to practical workplace problem solving.</p>
+        <p>His background includes more than 30 years in software development, implementation, analytics, client services, and health IT leadership, followed by recent classroom experience teaching Computer Science Foundations.</p>
+        <div class="button-row"><a class="btn" href="/portfolio">View Teaching Portfolio</a><a class="btn btn-secondary" href="/teaching-philosophy">Read Teaching Philosophy</a></div>
+      </div>
+      <img src="/profile.jpg" alt="Ron Aceto professional portrait">
+    </section>
+    <section>
+      <h2>Career Journey</h2>
+      <div class="cards">
+        <article class="card"><h3>Technology Leadership</h3><p>Ron has led software, implementation, analytics, support, and product work in health IT and human-services technology environments where clear communication, reliable systems, and ethical judgment matter.</p></article>
+        <article class="card"><h3>Recent Classroom Experience</h3><p>In spring 2026, he completed an interim Computer Science Foundations assignment, teaching Python, cybersecurity, digital ethics, and responsible technology use.</p></article>
+        <article class="card"><h3>CTE Direction</h3><p>He is focused on CTE, business technology, computer science, cybersecurity, digital ethics, and responsible AI literacy instruction that connects technical skills to career-ready habits.</p></article>
+      </div>
+    </section>
+    <section>
+      <h2>Teaching Philosophy</h2>
+      <p>Ron believes students learn technology best when lessons are practical, structured, ethical, and connected to the real decisions people make in the workplace. His classroom approach emphasizes problem solving, student ownership, verification, privacy, communication, and persistence.</p>
+      <p><a class="btn" href="/teaching-philosophy">Explore the Full Teaching Philosophy</a></p>
+    </section>
+    <section>
+      <h2>Key Accomplishments</h2>
+      <ul>
+        <li>30+ years of software, implementation, analytics, and health IT leadership.</li>
+        <li>Recent high-school Computer Science Foundations classroom experience.</li>
+        <li>Praxis Business Education and PLT 7-12 passed.</li>
+        <li>Teaching portfolio resources in AI literacy, coding, cybersecurity, and digital ethics.</li>
+        <li>Career-connected instruction focused on technical confidence, workplace habits, and responsible technology use.</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="inner">
+      <div>&copy; 2026 Ron Aceto. All rights reserved.</div>
+      <div><a href="/">Home</a> &middot; <a href="/about">About</a> &middot; <a href="/teaching-philosophy">Teaching Philosophy</a> &middot; <a href="/portfolio">Teaching Portfolio</a> &middot; <a href="/experience">Experience</a> &middot; <a href="/professional-development">Certifications</a> &middot; <a href="/contact">Contact</a> &middot; <a class="icon-link" href="https://www.linkedin.com/in/ron-aceto/"><span aria-hidden="true">LinkedIn</span></a></div>
+    </div>
+  </footer>
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const siteMenu = document.getElementById("site-menu");
+    if (menuToggle && siteMenu) {
+      menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        siteMenu.classList.toggle("is-open");
+      });
+    }
+  </script>
+</body>
+</html>
