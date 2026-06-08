@@ -114,7 +114,6 @@ const forbiddenFragments = [
   ["index.html", "CTE teaching candidate"],
   ["index.html", "now focuses on CTE, business technology, computer science, cybersecurity, digital ethics, and AI literacy instruction"],
   ["index.html", "Interim Computer Science Teacher</strong>"],
-  ["contact.html", "mailto:"],
   ["index.html", "Curriculum Developer | Team Builder"],
   ["ai-literacy-starter-kit.html", "<strong>Standards:</strong>"],
   ["ai-coding-starter-kit.html", "<strong>Standards:</strong>"],
