@@ -1,4 +1,5 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync, existsSync } from "node:fs";
+import path from "node:path";
 
 const routes = [
   "index.html",
@@ -19,12 +20,14 @@ const routes = [
 const requiredFragments = [
   ["index.html", "Ron Aceto"],
   ["index.html", "Experienced Technology Leader and Educator Pivoting to CTE Teaching"],
-  ["index.html", "/1masterronacetoresume.pdf"],
+  ["index.html", "View Portfolio Samples"],
+  ["index.html", "proof-strip"],
+  ["index.html", "/ron-aceto-resume.pdf"],
   ["index.html", "mission-callout"],
   ["teaching-philosophy.html", "How Industry Experience Shapes My Teaching"],
   ["teaching-philosophy.html", "Evidence: AI + Coding lesson artifacts"],
   ["teaching-philosophy.html", "<svg viewBox=\"0 0 24 24\">"],
-  ["portfolio.html", "Teaching Portfolio"],
+  ["portfolio.html", "Portfolio Samples"],
   ["portfolio.html", "Explore Classroom Artifacts"],
   ["portfolio.html", "/ai-literacy-starter-kit"],
   ["portfolio.html", "/ai-coding-starter-kit"],
@@ -53,6 +56,8 @@ const requiredFragments = [
   ["thank-you.html", "Your message has been received"],
   ["standards.html", "Standards Alignment Notes"],
   ["standards.html", "CSF 3.1"],
+  ["robots.txt", "Sitemap: https://ronaceto.com/sitemap.xml"],
+  ["sitemap.xml", "https://ronaceto.com/portfolio"],
   ["favicon.svg", "#214D94"],
   ["site.css", ":root"],
   ["site.css", "--brand:#214D94"],
@@ -65,7 +70,6 @@ const requiredFragments = [
 const forbiddenFragments = [
   ["portfolio.html", "Placeholder"],
   ["portfolio.html", "Phase 1"],
-  ["portfolio.html", "Portfolio Samples"],
   ["professional-development.html", "Pending"],
   ["professional-development.html", "Passed.</dd>"],
   ["index.html", "Currently an interim"],
@@ -74,6 +78,30 @@ const forbiddenFragments = [
   ["ai-coding-starter-kit.html", "<strong>Standards:</strong>"],
   ["cybersecurity-digital-ethics-starter-kit.html", "<strong>Standards:</strong>"],
 ];
+
+const htmlFiles = readdirSync(".").filter((file) => file.endsWith(".html"));
+const redirects = readFileSync("_redirects", "utf8")
+  .split(/\r?\n/)
+  .filter(Boolean)
+  .map((line) => line.trim().split(/\s+/));
+
+function hasInternalTarget(target) {
+  if (target === "/") return existsSync("index.html");
+  const clean = target.replace(/\/$/, "");
+  if (existsSync(clean.slice(1))) return true;
+  if (existsSync(`${clean.slice(1)}.html`)) return true;
+  if (redirects.some(([from]) => from === clean || from === `${clean}/`)) return true;
+  if (clean.startsWith("/resources/")) return existsSync(path.join("public", clean));
+  return false;
+}
+
+function walkFiles(dir) {
+  return readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) return walkFiles(full);
+    return full;
+  });
+}
 
 const aiLiteracyResourceFiles = [
   "student_ai_agreement_final_v2.pdf",
@@ -127,6 +155,23 @@ for (const route of routes) {
   }
 }
 
+for (const file of htmlFiles) {
+  const html = readFileSync(file, "utf8");
+  if (/netlify\.app/i.test(html)) {
+    throw new Error(`${file} references an out-of-scope Netlify project.`);
+  }
+  for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/g)) {
+    const url = match[1];
+    if (url.startsWith("mailto:") || url.startsWith("#")) continue;
+    if (/^https?:\/\//.test(url)) continue;
+    if (!url.startsWith("/")) continue;
+    const target = url.split(/[?#]/)[0];
+    if (!hasInternalTarget(target)) {
+      throw new Error(`${file} links to missing internal target: ${url}`);
+    }
+  }
+}
+
 for (const [file, fragment] of requiredFragments) {
   const contents = readFileSync(file, "utf8");
   if (!contents.includes(fragment)) {
@@ -165,4 +210,13 @@ for (const file of cybersecurityResourceFiles) {
   }
 }
 
-console.log(`Checked ${routes.length} routes, shared assets, and ${aiLiteracyResourceFiles.length + aiCodingResourceFiles.length + cybersecurityResourceFiles.length} downloads.`);
+for (const file of walkFiles(".").filter((candidate) => candidate.toLowerCase().endsWith(".pdf"))) {
+  const bytes = readFileSync(file);
+  const text = bytes.toString("latin1");
+  const pageCount = (text.match(/\/Type\s*\/Page\b/g) || []).length;
+  if (bytes.length < 1000 || !text.startsWith("%PDF") || !text.includes("%%EOF") || pageCount < 1) {
+    throw new Error(`${file} is not a valid non-empty PDF.`);
+  }
+}
+
+console.log(`Checked ${routes.length} routes, internal links, shared assets, and ${aiLiteracyResourceFiles.length + aiCodingResourceFiles.length + cybersecurityResourceFiles.length} portfolio downloads.`);
